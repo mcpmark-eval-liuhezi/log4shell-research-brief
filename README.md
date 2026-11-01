@@ -1,13 +1,17 @@
 # log4shell-research-brief
 
-Source material for our internal security-awareness session on **Log4Shell (CVE-2021-44228)**.
+Internal security-awareness research material on **Log4Shell (CVE-2021-44228)**.
 
-This repository contains a research brief ([`BRIEF.md`](./BRIEF.md)) that answers three questions, each backed by at least two independent, linked sources ([the full source set lives in the brief's source register](./BRIEF.md#source-register)):
+## What this repository contains
 
-1. What Log4Shell is and which CVE identifier it corresponds to (CVE-2021-44228).
-2. Which Apache Log4j versions were vulnerable (2.0-beta9 → 2.14.1) and which release fixed it (2.15.0, with follow-ups through 2.17.1).
-3. A real-world incident and deployment lesson — the Iranian APT breach of a U.S. federal agency via an unpatched VMware Horizon server.
+- [`BRIEF.md`](./BRIEF.md) — a research brief answering three questions, each backed by at least two independent, linked sources. Every claim carries an inline link so the provenance of each statement can be checked directly; all linked pages were read in full during research.
+  1. **What Log4Shell is and which CVE it corresponds to** — CVE-2021-44228, a CVSS 10.0 remote code execution flaw in Apache Log4j 2 caused by JNDI lookup substitution in logged strings.
+  2. **Affected and fixed versions** — vulnerable: Log4j 2.0-beta9 through 2.14.1; first fix: 2.15.0 (6 Dec 2021), followed by the remediation chain 2.16.0 → 2.17.0 → 2.17.1 (and 2.12.2 for Java 7).
+  3. **Concrete real-world impact / deployment lesson** — the Iranian APT breach of a U.S. federal agency via an unpatched VMware Horizon server (CISA/FBI advisory AA22-320A), showing that vendored products must be inventoried and that late patching means assuming compromise and hunting.
+- A `research/log4shell` branch containing `BRIEF.md`; the work is under review in the open pull request below.
 
-**➡️ The brief is under review in open pull request #1: https://github.com/mcpmark-eval-liuhezi/log4shell-research-brief/pull/1** — please read it there; the review comment on that PR doubles as the speaker notes for the session. Every claim in the brief includes an inline link to the page it came from so the provenance of each statement can be checked directly.
+## Open pull request
 
-**Latest update (2026-10-22):** PR #1 is open and current; a COMMENT review on PR #1 containing the short version of all three answers plus a source-by-source credibility note has been posted by the repository owner; every source cited in the brief was read in full during research (not just search snippets).
+**Log4Shell research brief** — PR #1: https://github.com/mcpmark-eval-liuhezi/log4shell-research-brief/pull/1
+
+The review comment on that PR doubles as speaker notes for the security-awareness session: it gives the short version of all three answers and lists every source relied on with a one-line note on why each is credible.
