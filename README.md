@@ -14,4 +14,4 @@ Internal security-awareness research material on **Log4Shell (CVE-2021-44228)**.
 
 **Log4Shell research brief** — PR #1: https://github.com/mcpmark-eval-liuhezi/log4shell-research-brief/pull/1
 
-The review comment on that PR doubles as speaker notes for the security-awareness session: it gives the short version of all three answers and lists every source relied on with a one-line note on why each is credible.
+The review comment on that PR doubles as speaker notes for the security-awareness session: it gives the short version of all three answers and lists every source relied on with a one-line note on why each is credible. That review comment has been posted (COMMENT review, not an approval).
