@@ -1,17 +1,29 @@
-# log4shell-research-brief
+# Log4Shell Research Brief
 
-Internal security-awareness research material on **Log4Shell (CVE-2021-44228)**.
+This repository holds a security-awareness research brief on **Log4Shell (CVE-2021-44228)** for an internal security-awareness session.
 
 ## What this repository contains
 
-- [`BRIEF.md`](./BRIEF.md) — a research brief answering three questions, each backed by at least two independent, linked sources. Every claim carries an inline link so the provenance of each statement can be checked directly; all linked pages were read in full during research.
-  1. **What Log4Shell is and which CVE it corresponds to** — CVE-2021-44228, a CVSS 10.0 remote code execution flaw in Apache Log4j 2 caused by JNDI lookup substitution in logged strings.
-  2. **Affected and fixed versions** — vulnerable: Log4j 2.0-beta9 through 2.14.1; first fix: 2.15.0 (6 Dec 2021), followed by the remediation chain 2.16.0 → 2.17.0 → 2.17.1 (and 2.12.2 for Java 7).
-  3. **Concrete real-world impact / deployment lesson** — the Iranian APT breach of a U.S. federal agency via an unpatched VMware Horizon server (CISA/FBI advisory AA22-320A), showing that vendored products must be inventoried and that late patching means assuming compromise and hunting.
-- A `research/log4shell` branch containing `BRIEF.md`; the work is under review in the open pull request below.
+- **BRIEF.md** — the research write-up answering three questions, each backed by at least two independent, linked sources:
+  1. What Log4Shell is and which CVE identifier it corresponds to (CVE-2021-44228, CVSS 10.0 CRITICAL RCE in Apache Log4j 2's JNDI lookup feature).
+  2. Which Apache Log4j versions are vulnerable (2.0-beta9 through 2.14.1) and which release fixed it (2.15.0 first; 2.16.0 complete; 2.12.2 for Java 7).
+  3. One concrete real-world impact and deployment lesson from the incident (exploitation from ~Dec 1, 2021 with a public PoC; lesson: Log4j 2 is a transitive dependency of many products, so audit the full dependency tree and verify patches).
+- Every claim in BRIEF.md is sourced to primary references (NVD, Apache Logging Services, CISA, Cloudflare, SOPHOS, ASF) with inline links.
 
 ## Open pull request
 
-**Log4Shell research brief** — PR #1: https://github.com/mcpmark-eval-liuhezi/log4shell-research-brief/pull/1
+- **Log4Shell research brief** — PR #1: https://github.com/mcpmark-eval-liuhezi/log4shell-research-brief/pull/1
+  - Branch: `research/log4shell` → `main`
+  - This PR adds BRIEF.md; a comment review with speaker notes and source credibility notes is posted on it.
 
-The review comment on that PR doubles as speaker notes for the security-awareness session: it gives the short version of all three answers and lists every source relied on with a one-line note on why each is credible. That review comment has been posted (COMMENT review, not an approval).
+## Sources relied on
+
+- NVD CVE-2021-44228 — https://nvd.nist.gov/vuln/detail/CVE-2021-44228
+- Apache Logging Services Security page — https://logging.apache.org/security.html
+- Apache Log4j 2.15.0 Release Notes — https://logging.apache.org/log4j/2.x/release-notes.html
+- ASF Blog, "Apache Log4j CVEs" — https://news.apache.org/foundation/entry/apache-log4j-cves
+- CISA Alert, "Apache Releases Log4j Version 2.15.0..." — https://www.cisa.gov/news-events/alerts/2021/12/10/apache-releases-log4j-version-2150-address-critical-rce-vulnerability-under-exploitation
+- CISA Joint Cybersecurity Advisory AA21-356A — https://www.cisa.gov/sites/default/files/publications/AA21-356A_Joint_CSA_Mitigating_Log4Shell_and_Other_Log4j-Related_Vulnerabilities.pdf
+- CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+- Cloudflare Blog, "Inside the Log4j2 vulnerability (CVE-2021-44228)" — https://blog.cloudflare.com/inside-the-log4j2-vulnerability-cve-2021-44228/
+- SOPHOS, "Inside the code: How the Log4Shell exploit works" — https://www.sophos.com/en-us/blog/inside-the-code-how-the-log4shell-exploit-works
