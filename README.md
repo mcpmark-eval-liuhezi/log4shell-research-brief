@@ -28,4 +28,4 @@ Security-awareness research brief on **Log4Shell (CVE-2021-44228)** for an inter
 - CISA/FBI Advisory AA22-320A (VMware Horizon breach) — https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-320a
 - JPCERT/CC AT-2021-0050 — https://www.jpcert.or.jp/english/at/2021/at210050.html
 - Cloudflare Blog, "Inside the Log4j2 vulnerability (CVE-2021-44228)" — https://blog.cloudflare.com/inside-the-log4j2-vulnerability-cve-2021-44228/
-- SOPHOS, "Inside the code: How the Log4Shell exploit works" — https://www.sophos.com/en-us/blog/inside-the-code-how-the-log4shell-exploits-works
+- SOPHOS, "Inside the code: How the Log4Shell exploit works" — https://www.sophos.com/en-us/blog/inside-the-code-how-the-log4shell-exploit-works
